@@ -12,3 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 }
+
+//P3L05aDasAnushaLifecycle.apk
+//Video, main activity java
+//embellish- new apk and video
