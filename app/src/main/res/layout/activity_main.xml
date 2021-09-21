@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,11 +22,13 @@
             android:textSize="30sp"
             android:textColor="@color/purple_500"
             android:padding="10dp"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
+        <include layout="@layout/countertxt" android:id="@+id/onCreateLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onStartLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onResumeLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onPauseLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onStopLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onRestartLbl1"/>
+        <include layout="@layout/countertxt" android:id="@+id/onDestroyLbl1"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,11 +36,32 @@
             android:textSize="30sp"
             android:textColor="@color/purple_500"
             android:padding="10dp"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
-        <include layout="@layout/countertxt"/>
+        <include layout="@layout/countertxt" android:id="@+id/onCreateLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onStartLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onResumeLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onPauseLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onStopLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onRestartLbl2"/>
+        <include layout="@layout/countertxt" android:id="@+id/onDestroyLbl2"/>
     </LinearLayout>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/data"
+        android:layout_marginTop="20dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset lifetime data"
+            android:onClick="lifeReset"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="reset run data"
+            android:onClick="runReset"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
