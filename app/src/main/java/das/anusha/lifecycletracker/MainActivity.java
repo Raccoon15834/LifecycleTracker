@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myNumSaves = getSharedPreferences(prefTag, Context.MODE_PRIVATE);
-
+        //initializing data classes
         onCreateData = new dataCount("Creates this life: ", "Runtime creates: ", myNumSaves);
         onStartData = new dataCount("Starts this life: ", "Runtime starts: ", myNumSaves);
         onResumeData = new dataCount("Resumes this life: ", "Runtime resumes: ", myNumSaves);
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         onStopData = new dataCount("Stops this life: ", "Runtime stops: ", myNumSaves);
         onRestartData = new dataCount("Restarts life: ", "Runtime restarts: ", myNumSaves);
         onDestroyData = new dataCount("Destroys this life: ", "Runtime destroys: ", myNumSaves);
-
+        //initializing text views
         onCreateLbl1 = findViewById(R.id.onCreateLbl1);
         onCreateLbl2 = findViewById(R.id.onCreateLbl2);
         onStartLbl1 = findViewById(R.id.onStartLbl1);
@@ -53,9 +53,21 @@ public class MainActivity extends AppCompatActivity {
         onRestartLbl2 = findViewById(R.id.onRestartLbl2);
         onDestroyLbl1 = findViewById(R.id.onDestroyLbl1);
         onDestroyLbl2 = findViewById(R.id.onDestroyLbl2);
-
+        //setting first texts
         onCreateLbl1.setText(onCreateData.incrCount1());
         onCreateLbl2.setText(onCreateData.incrCount2());
+        onStartLbl1.setText(onStartData.getMyLbl1());
+        onStartLbl2.setText(onStartData.getMyLbl2());
+        onResumeLbl1.setText(onResumeData.getMyLbl1());
+        onResumeLbl2.setText(onResumeData.getMyLbl2());
+        onPauseLbl1.setText(onPauseData.getMyLbl1());
+        onPauseLbl2.setText(onPauseData.getMyLbl2());
+        onStopLbl1.setText(onStopData.getMyLbl1());
+        onStopLbl2.setText(onStopData.getMyLbl2());
+        onRestartLbl1.setText(onRestartData.getMyLbl1());
+        onRestartLbl2.setText(onRestartData.getMyLbl2());
+        onDestroyLbl1.setText(onDestroyData.getMyLbl1());
+        onDestroyLbl2.setText(onDestroyData.getMyLbl2());
     }
 
     @Override
@@ -103,7 +115,13 @@ public class MainActivity extends AppCompatActivity {
        onStopData.resetLife();
        onRestartData.resetLife();
        onDestroyData.resetLife();
-
+       onCreateLbl1.setText(onCreateData.getMyLbl1());
+       onStartLbl1.setText(onStartData.getMyLbl1());
+       onResumeLbl1.setText(onResumeData.getMyLbl1());
+       onPauseLbl1.setText(onPauseData.getMyLbl1());
+       onStopLbl1.setText(onStopData.getMyLbl1());
+       onRestartLbl1.setText(onRestartData.getMyLbl1());
+       onDestroyLbl1.setText(onDestroyData.getMyLbl1());
     }
 
     public void runReset(View view) {
@@ -114,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
         onStopData.resetRun();
         onRestartData.resetRun();
         onDestroyData.resetRun();
+        onCreateLbl2.setText(onCreateData.getMyLbl2());
+        onStartLbl2.setText(onStartData.getMyLbl2());
+        onResumeLbl2.setText(onResumeData.getMyLbl2());
+        onPauseLbl2.setText(onPauseData.getMyLbl2());
+        onStopLbl2.setText(onStopData.getMyLbl2());
+        onRestartLbl2.setText(onRestartData.getMyLbl2());
+        onDestroyLbl2.setText(onDestroyData.getMyLbl2());
     }
 }
 
