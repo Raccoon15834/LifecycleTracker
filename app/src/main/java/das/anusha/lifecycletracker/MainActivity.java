@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         onResumeData = new dataCount("Resumes this life: ", "Runtime resumes: ", myNumSaves);
         onPauseData = new dataCount("Pauses this life: ", "Runtime pauses: ", myNumSaves);
         onStopData = new dataCount("Stops this life: ", "Runtime stops: ", myNumSaves);
-        onRestartData = new dataCount("Restarts life: ", "Runtime restarts: ", myNumSaves);
+        onRestartData = new dataCount("Restarts this life: ", "Runtime restarts: ", myNumSaves);
         onDestroyData = new dataCount("Destroys this life: ", "Runtime destroys: ", myNumSaves);
         //initializing text views
         onCreateLbl1 = findViewById(R.id.onCreateLbl1);
@@ -100,11 +100,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean isDestroyed() {
+    public void finish() {
         onDestroyLbl1.setText( onDestroyData.incrCount1());
         onDestroyLbl2.setText( onDestroyData.incrCount2());
-        return super.isDestroyed();
+        super.finish();
     }
+
+    @Override
+    public void onDestroy() {
+        onDestroyLbl1.setText(onDestroyData.incrCount1());
+        onDestroyLbl2.setText(onDestroyData.incrCount2());
+        super.onDestroy();
+    }
+
 
 
     public void lifeReset(View view) {

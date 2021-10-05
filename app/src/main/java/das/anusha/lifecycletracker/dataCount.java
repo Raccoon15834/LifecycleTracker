@@ -19,7 +19,7 @@ public class dataCount {
     }
 
     public String getMyLbl1() {
-        return myLbl1 + count1;
+        return myLbl1 + lifeSaves.getInt(myLbl1, 0);
     }
     public String getMyLbl2() {
         return myLbl2 + count2;
@@ -39,7 +39,7 @@ public class dataCount {
     }
     public void resetLife(){
         count1=0;
-        editSaves.putInt(myLbl1, count1);
+        editSaves.putInt(myLbl1, 0);
         editSaves.apply();
     }
     public void resetRun(){
